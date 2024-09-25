@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure Sensor Data</title>
+    <style>
+        .color-box {
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #000;
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pressure Data</h1>
+    <div id="pressure-data"></div>
+    <div id="color-data"></div>
+
+    <button id="toggle-button" class="button">Connect WebSocket</button>
+
+    <script>
+        let socket;
+        const toggleButton = document.getElementById("toggle-button");
+
+        // Function to handle WebSocket connection and disconnection
+        function toggleWebSocket() {
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                // Close WebSocket connection
+                socket.close();
+                toggleButton.textContent = "Connect WebSocket";
+                console.log("WebSocket is closed now.");
+            } else {
+                // Open WebSocket connection
+                socket = new WebSocket("wss://YOUR_WEBSOCKET_API_ENDPOINT/prod");
+
+                socket.onopen = function(event) {
+                    console.log("WebSocket is open now.");
+                    toggleButton.textContent = "Disconnect WebSocket";
+                };
+
+                socket.onclose = function(event) {
+                    console.log("WebSocket is closed now.");
+                    toggleButton.textContent = "Connect WebSocket";
+                };
+
+                socket.onmessage = function(event) {
+                    const data = JSON.parse(event.data);
+                    const pressures = data.pressures;
+                    const colors = data.colors;
+
+                    // Display pressures
+                    document.getElementById("pressure-data").innerHTML = `Pressures: ${pressures.join(", ")}`;
+
+                    // Clear previous color data
+                    const colorDataDiv = document.getElementById("color-data");
+                    colorDataDiv.innerHTML = '';
+
+                    // Display colors as colored boxes
+                    colors.forEach(color => {
+                        const colorBox = document.createElement("div");
+                        colorBox.className = "color-box";
+                        colorBox.style.backgroundColor = color;  // Apply the color
+                        colorDataDiv.appendChild(colorBox);
+                    });
+                };
+
+                socket.onerror = function(error) {
+                    console.error("WebSocket error:", error);
+                };
+            }
+        }
+
+        // Attach click event listener to the toggle button
+        toggleButton.addEventListener("click", toggleWebSocket);
+    </script>
+</body>
+</html>

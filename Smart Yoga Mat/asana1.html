@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asana - Smart Yoga Mat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Content within Asana Page Wrapper -->
+    <div class="asana-page">
+        <header>
+            <h1>Welcome to Asana</h1>
+            <p>Your Smart Yoga Mat experience begins here.</p>
+        </header>
+
+        <!-- Placeholder for user data -->
+        <section id="user-info">
+            <p>Loading your information...</p>
+        </section>
+
+        <!-- Mandatory Form -->
+        <section id="mandatory-form">
+            <h2>Complete Your Profile</h2>
+            <form id="user-details-form">
+                <label for="height">Height:</label>
+                <input type="text" id="height" name="height" required>
+
+                <label for="device_id">Device:</label>
+                <select id="device_id" name="device_id" required>
+                    <option value="MAT_1">MAT_1</option>
+                    <option value="MAT_2">MAT_2</option>
+                    <option value="MAT_3">MAT_3</option>
+                </select>
+
+                <button type="button" onclick="sendFormData()">Submit</button>
+            </form>
+        </section>
+
+        <!-- Device Modal -->
+        <div id="device-modal">
+            <div class="modal-content">
+                <h3>Your Device</h3>
+                <img src="images/device.jpg" alt="Device Image">
+                <button onclick="connectDevice()">Connect</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Asana - Smart Yoga Mat</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

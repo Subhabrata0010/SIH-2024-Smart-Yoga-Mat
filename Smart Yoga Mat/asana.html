@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><!--D-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--D-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--D-->
+    <title>Smart Yoga Mat</title><!--D-->
+    <link rel="stylesheet" href="style.css"><!--D-->
+    <link rel="stylesheet" href="styles.css"><!--D-->
+    <script src="script.js" defer></script><!--D-->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+     <!--==============  BOX ICON CDN ==============  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ==============  LINK SWIPER'S CSS ==============  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="nav_logo">
+                <h3>Smart Yoga Mat</h3>
+            </a>
+    
+            <ul id="nav_items" class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Features</a></li>
+                <li><a href="#instructors">How To Use</a></li>
+            
+                <!-- Separate Login and Sign Up buttons -->
+                <li>
+                    <button id="toggle-button" class="button">
+                        Connect WebSocket
+                    </button>
+                </li>
+            </ul>
+    
+            <button id="open_nav-btn"><i class='bx bx-menu'></i></button>
+            <button id="close_nav-btn"><i class='bx bx-x'></i></button>
+        </div>
+    </nav>
+    
+    <!-- ==============  END OF NAV ==============  -->
+
+    <header style="position: relative; text-align: center;">
+        <img src="./assets/pngtree-vividly-rendered-yoga-mats-creating-a-colorful-floor-display-picture-image_3696625.jpg" alt="Photo Of A Yogmetic Yoga Class" style="width: 100%; height: auto;">
+        <div id="overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(24, 0, 0); text-align: center;">
+            <h1 id="title" style="font-size: 3rem; font-weight: bold; margin: 0; white-space: nowrap;">Smart Yoga Mat</h1>
+            <p id="subtitle" style="font-size: 1.5rem; margin: 0;">Your perfect companion for a smarter yoga practice.</p>
+        </div>
+    </header>
+    
+    <style>
+        /* Ensure "Smart Yoga Mat" always stays in one line */
+        #title {
+            white-space: nowrap;
+        }
+    
+        /* Media queries cannot be inline, so they must stay in a style block */
+        
+        /* Default styling for larger screens (desktops and laptops) */
+        @media (min-width: 1024px) {
+            #title {
+                font-size: 3rem !important;
+            }
+    
+            #subtitle {
+                font-size: 1.5rem !important;
+            }
+        }
+    
+        /* Styling for tablets (landscape and portrait) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #title {
+                font-size: 2.5rem !important;
+            }
+    
+            #subtitle {
+                font-size: 1.25rem !important;
+            }
+        }
+    
+        /* Styling for mobile devices (phones and small screens) */
+        @media (max-width: 767px) {
+            #title {
+                font-size: 2rem !important;
+            }
+    
+            #subtitle {
+                font-size: 1rem !important;
+            }
+    
+            #overlay {
+                top: 40% !important; /* Adjust text placement for smaller screens */
+            }
+        }
+        .color-box {
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #000;
+        }
+        .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    </style>
+    
+    <!-- ==============  END OF HEADER ==============  -->
+
+
+    <section id="testimonials" class="swiper mySwiper">
+
+        <!-- Main Content within Asana Page Wrapper -->
+    <div class="asana-page">
+        <header>
+            <h1>Welcome to Asana</h1>
+            <p>Your Smart Yoga Mat experience begins here.</p>
+        </header>
+
+        <!-- Placeholder for user data -->
+        <section id="user-info">
+            <p>Loading your information...</p>
+        </section>
+
+        <!-- Mandatory Form -->
+        <section id="mandatory-form">
+            <h2>Complete Your Profile</h2>
+            <form id="user-details-form">
+                <label for="height">Height:</label>
+                <input type="text" id="height" name="height" required>
+
+                <label for="device_id">Device:</label>
+                <select id="device_id" name="device_id" required>
+                    <option value="MAT_1">MAT_1</option>
+                    <option value="MAT_2">MAT_2</option>
+                    <option value="MAT_3">MAT_3</option>
+                </select>
+
+                <button type="button" onclick="sendFormData()">Submit</button>
+            </form>
+        </section>
+
+        <!-- Device Modal -->
+        <div id="device-modal">
+            <div class="modal-content">
+                <h3>Your Device</h3>
+                <img src="images/device.jpg" alt="Device Image">
+                <button id="toggle-button" class="button">
+                    Connect WebSocket
+                </button>
+            </div>
+        </div>
+        <h1>Pressure Data</h1>
+        <div id="pressure-data"></div>
+        <div id="color-data"></div>
+        
+    </section>
+    <!-- ==============  END OF TESTIMONIALS ==============  -->
+
+
+    <footer>
+        <div class="container">
+            <article>
+                <a href="#" class="footer_logo">
+                    <h3>Smart Yoga Mat</h3>
+                </a>
+                <p>Your perfect companion for a smarter yoga practice</p>
+
+                <div>
+                    <i class='bx bxs-phone'></i>
+                    <small>+91 9691819077</small>
+                </div>
+
+                
+            </article>
+
+            <article>
+                <h3>Support</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Purchasing Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Career</a>
+            </article>
+
+            <article>
+                <h3>Permalinks</h3>
+                <a href="#">Home</a>
+                <a href="#services">Features</a>
+                <a href="#instructors">How to Use</a>
+                
+            </article>
+
+            <article>
+                <h3>Contact Us</h3>
+                <p>Press</p>
+                <p>FAQs</p>
+                <div class="footer_socials">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="copyright">
+            <small>&copy; Copyright Smart Yoga Mat. All Rights Reserved.</small>
+        </div>
+    </footer>
+    <!-- ==============  END OF FOOTER ==============  -->
+
+    <!-- ==============  SWIPER JS ==============  -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let socket;
+        const toggleButton = document.getElementById("toggle-button");
+
+        // Function to handle WebSocket connection and disconnection
+        function toggleWebSocket() {
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                // Close WebSocket connection
+                socket.close();
+                toggleButton.textContent = "Connect WebSocket";
+                console.log("WebSocket is closed now.");
+            } else {
+                // Open WebSocket connection
+                socket = new WebSocket("wss://0hrwt85h36.execute-api.ap-south-1.amazonaws.com/prod/");
+
+                socket.onopen = function(event) {
+                    console.log("WebSocket is open now.");
+                    toggleButton.textContent = "Disconnect WebSocket";
+                };
+
+                socket.onclose = function(event) {
+                    console.log("WebSocket is closed now.");
+                    toggleButton.textContent = "Connect WebSocket";
+                };
+
+                socket.onmessage = function(event) {
+                    const data = JSON.parse(event.data);
+                    const pressures = data.pressures;
+                    const colors = data.colors;
+
+                    // Display pressures
+                    document.getElementById("pressure-data").innerHTML = `Pressures: ${pressures.join(", ")}`;
+
+                    // Clear previous color data
+                    const colorDataDiv = document.getElementById("color-data");
+                    colorDataDiv.innerHTML = '';
+
+                    // Display colors as colored boxes
+                    colors.forEach(color => {
+                        const colorBox = document.createElement("div");
+                        colorBox.className = "color-box";
+                        colorBox.style.backgroundColor = color;  // Apply the color
+                        colorDataDiv.appendChild(colorBox);
+                    });
+                };
+
+                socket.onerror = function(error) {
+                    console.error("WebSocket error:", error);
+                };
+            }
+        }
+
+        // Attach click event listener to the toggle button
+        toggleButton.addEventListener("click", toggleWebSocket);
+    </script>
+</body>
+
+</html>

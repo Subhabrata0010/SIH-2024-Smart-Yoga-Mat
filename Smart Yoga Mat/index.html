@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><!--D-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--D-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--D-->
+    <title>Smart Yoga Mat</title><!--D-->
+    <link rel="stylesheet" href="style.css"><!--D-->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+     <!--==============  BOX ICON CDN ==============  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ==============  LINK SWIPER'S CSS ==============  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="nav_logo">
+                <h3>Smart Yoga Mat</h3>
+            </a>
+    
+            <ul id="nav_items" class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Features</a></li>
+                <li><a href="#instructors">How To Use</a></li>
+    
+                <!-- Separate Login and Sign Up buttons -->
+                <li><a href="https://system404.auth.ap-south-1.amazoncognito.com/login?response_type=code&client_id=3tnr97r3pp977t6kl80cags9e1&redirect_uri=https://d2o4tw11egl.cloudfront.net/asana.html" class="btn">Login</a></li>
+                <li><a href="https://system404.auth.ap-south-1.amazoncognito.com/signup?response_type=code&client_id=3tnr97r3pp977t6kl80cags9e1&redirect_uri=https://d2o4tw11egl.cloudfront.net/asana.html" class="btn">Sign Up</a></li>
+            </ul>
+    
+            <button id="open_nav-btn"><i class='bx bx-menu'></i></button>
+            <button id="close_nav-btn"><i class='bx bx-x'></i></button>
+        </div>
+    </nav>
+    
+    <!-- ==============  END OF NAV ==============  -->
+
+    <header style="position: relative; text-align: center;">
+        <img src="./assets/pngtree-vividly-rendered-yoga-mats-creating-a-colorful-floor-display-picture-image_3696625.jpg" alt="Photo Of A Yogmetic Yoga Class" style="width: 100%; height: auto;">
+        <div id="overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(24, 0, 0); text-align: center;">
+            <h1 id="title" style="font-size: 3rem; font-weight: bold; margin: 0; white-space: nowrap;">Smart Yoga Mat</h1>
+            <p id="subtitle" style="font-size: 1.5rem; margin: 0;">Your perfect companion for a smarter yoga practice.</p>
+        </div>
+    </header>
+    
+    <style>
+        /* Ensure "Smart Yoga Mat" always stays in one line */
+        #title {
+            white-space: nowrap;
+        }
+    
+        /* Media queries cannot be inline, so they must stay in a style block */
+        
+        /* Default styling for larger screens (desktops and laptops) */
+        @media (min-width: 1024px) {
+            #title {
+                font-size: 3rem !important;
+            }
+    
+            #subtitle {
+                font-size: 1.5rem !important;
+            }
+        }
+    
+        /* Styling for tablets (landscape and portrait) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #title {
+                font-size: 2.5rem !important;
+            }
+    
+            #subtitle {
+                font-size: 1.25rem !important;
+            }
+        }
+    
+        /* Styling for mobile devices (phones and small screens) */
+        @media (max-width: 767px) {
+            #title {
+                font-size: 2rem !important;
+            }
+    
+            #subtitle {
+                font-size: 1rem !important;
+            }
+    
+            #overlay {
+                top: 40% !important; /* Adjust text placement for smaller screens */
+            }
+        }
+    </style>
+    
+    <!-- ==============  END OF HEADER ==============  -->
+
+    <section id="services">
+        <h2>Features</h2>
+        <p>
+            Elevate Your Practice with Our Innovative Tools
+        </p>
+
+        <div class="container">
+            <article>
+                <i class='bx bxs-analyse' ></i>
+                <div>
+                    <h4>Real-Time Feedback</h4>
+                    <small>Receive instant feedback on your posture and alignment, ensuring every pose is performed correctly.</small>
+                </div>
+            </article>
+
+            <article>
+                <i class='bx bx-data'></i>
+                <div>
+                    <h4>Data Tracking</h4>
+                    <small>Track your progress over time with detailed analytics, helping you improve your practice session by session.</small>
+                </div>
+            </article>
+
+            <article>
+                <i class='bx bx-run' ></i>
+                <div>
+                    <h4>Customizable Programs</h4>
+                    <small>Choose from a variety of yoga programs tailored to your individual needs, whether you're a beginner or an advanced practitioner.</small>
+                </div>
+            </article>
+
+            <article>
+                <i class='bx bx-wifi' ></i>
+                <div>
+                    <h4>Wireless Connectivity</h4>
+                    <small>Sync with mobile devices for a seamless experience, allowing you to monitor your performance and access programs on the go.</small>
+                </div>
+            </article>
+
+            <article>
+                <i class='bx bx-leaf' ></i>
+                <div>
+                    <h4>Eco-Friendly Materials</h4>
+                    <small>Made from sustainable, non-toxic materials, ensuring both comfort and environmental safety during your practice.</small>
+                </div>
+            </article>
+
+            <article>
+                <i class='bx bxs-wallet' ></i>
+                <div>
+                    <h4>Affordable</h4>
+                    <small>A high-quality, smart yoga mat at an affordable price, making it accessible to yoga practitioners of all levels.</small>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- ==============  END OF SERVICES ==============  -->
+
+    <section id="instructors">
+        <h2>How To Use</h2>
+        <p>Unfold, power on, connect via Bluetooth, choose a program, follow instructions, and review metrics.</p>
+        <div class="container">
+            <article>
+                <div class="instructors_image">
+                    <img src="./assets/1st.jpg" alt="One">
+                </div>
+                <div class="instructor_details">
+                    <h4>Unfold and position</h4>
+                    <small>Unfold your Smart Yoga Mat and place it on a flat surface.</small>
+                </div>
+                <a class="instructor_instagram" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312z"/>
+                    </svg>
+                </a>
+            </article>
+
+            <article>
+                <div class="instructors_image">
+                    <img src="./assets/2nd.jpg" alt=" Two">
+                </div>
+                <div class="instructor_details">
+                    <h4>Power on</h4>
+                    <small>Power on the mat by pressing the button located at the edge.</small>
+                </div>
+                <a  class="instructor_instagram" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+                      </svg>
+                </a>
+                
+            </article>
+        
+            <article>
+                <div class="instructors_image">
+                    <img src="./assets/3rd.jpg" alt="Three">
+                </div>
+                <div class="instructor_details">
+                    <h4>Connect Wirelessly</h4>
+                    <small>Connect the mat to the Smart Yoga Mat app using Wirless Technlogy</small>
+                </div>
+                <a  class="instructor_instagram" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-3-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z"/>
+                      </svg>
+                </a>
+            </article>
+
+            <article>
+                <div class="instructors_image">
+                    <img src="./assets/4th.jpg" alt="Four">
+                </div>
+                <div class="instructor_details">
+                    <h4>Choose program</h4>
+                    <small>Select your desired yoga program</small>
+                </div>
+                <a  class="instructor_instagram" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-4-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M7.519 5.057c-.886 1.418-1.772 2.838-2.542 4.265v1.12H8.85V12h1.26v-1.559h1.007V9.334H10.11V4.002H8.176zM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218"/>
+                      </svg>
+                </a>
+            </article>
+
+            <article>
+                <div class="instructors_image">
+                    <img src="./assets/5th.jpg" alt="Five">
+                </div>
+                <div class="instructor_details">
+                    <h4>Begin session</h4>
+                    <small>Start your session and follow the guided instructions.</small>
+                </div>
+                <a  class="instructor_instagram" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-5-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z"/>
+                      </svg>
+                </a>
+            </article>
+
+            <article>
+                <div class="instructors_image">
+                    <img src="./assets/6th.jpg" alt="Six">
+                </div>
+                <div class="instructor_details">
+                    <h4>Review results</h4>
+                    <small>Review your performance metrics after completing the session</small>
+                </div>
+                <a  class="instructor_instagram" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-6-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.21 3.855c-1.868 0-3.116 1.395-3.116 4.407 0 1.183.228 2.039.597 2.642.569.926 1.477 1.254 2.409 1.254 1.629 0 2.847-1.013 2.847-2.783 0-1.676-1.254-2.555-2.508-2.555-1.125 0-1.752.61-1.98 1.155h-.082c-.012-1.946.727-3.036 1.805-3.036.802 0 1.213.457 1.312.815h1.29c-.06-.908-.962-1.899-2.573-1.899Zm-.099 4.008c-.92 0-1.564.65-1.564 1.576 0 1.032.703 1.635 1.558 1.635.868 0 1.553-.533 1.553-1.629 0-1.06-.744-1.582-1.547-1.582"/>
+                      </svg>
+                </a>
+            </article>
+        </div>
+    </section>
+    
+    <!-- ==============  END OF STEPS ==============  -->
+     <!-- ==============  Getting Started ==============  -->
+
+
+    <section id="testimonials" class="swiper mySwiper">
+        <h2>Getting Started</h2>
+        <p>Begin your journey towards a smarter yoga practice by signing up or logging in to access all features.</p>
+        <ul style="text-align: center;">
+            <li style="display: inline-block;">
+                <a href="https://system404.auth.ap-south-1.amazoncognito.com/signup?response_type=code&client_id=3tnr97r3pp977t6kl80cags9e1&redirect_uri=https://d2o4tw11egl.cloudfront.net/asana.html" class="btn">Join Today</a>
+            </li>
+        </ul>
+        
+        <div class="swiper-pagination"></div>
+    </section>
+    <!-- ==============  END OF TESTIMONIALS ==============  -->
+
+    
+    <!-- ==============  END OF APPOINTMENTS ==============  -->
+
+    <footer>
+        <div class="container">
+            <article>
+                <a href="#" class="footer_logo">
+                    <h3>Smart Yoga Mat</h3>
+                </a>
+                <p>Your perfect companion for a smarter yoga practice</p>
+
+                <div>
+                    <i class='bx bxs-phone'></i>
+                    <small>+91 9691819077</small>
+                </div>
+
+                
+            </article>
+
+            <article>
+                <h3>Support</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Purchasing Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Career</a>
+            </article>
+
+            <article>
+                <h3>Permalinks</h3>
+                <a href="#">Home</a>
+                <a href="#services">Features</a>
+                <a href="#instructors">How to Use</a>
+                
+            </article>
+
+            <article>
+                <h3>Contact Us</h3>
+                <p>Press</p>
+                <p>FAQs</p>
+                <div class="footer_socials">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="copyright">
+            <small>&copy; Copyright Smart Yoga Mat. All Rights Reserved.</small>
+        </div>
+    </footer>
+    <!-- ==============  END OF FOOTER ==============  -->
+
+    <!-- ==============  SWIPER JS ==============  -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
